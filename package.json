@@ -17,10 +17,13 @@
     "package.json": "pnpm sort-package-json"
   },
   "dependencies": {
+    "ahooks": "^3.7.11",
+    "antd": "^5.17.2",
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "react-router-dom": "6.23.1",
-    "tilg": "0.1.1"
+    "tilg": "0.1.1",
+    "zustand": "^4.5.2"
   },
   "devDependencies": {
     "@total-typescript/ts-reset": "0.5.1",

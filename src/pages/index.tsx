@@ -1,17 +1,37 @@
+import { useCounterStore } from "@/stores/counter";
+import { useClickAway } from "ahooks";
+import { Button, Flex, notification } from "antd";
+
 export default function Index() {
   const [count, setCount] = useState(0);
-  const SomeContext = createContext({});
+  const { bears, increment } = useCounterStore();
+  const buttonRef = useRef<HTMLButtonElement>(null);
+
+  useClickAway(() => {
+    notification.open({
+      message: "Notification Title",
+      description:
+        "This is the content of the notification. This is the content of the notification. This is the content of the notification.",
+    });
+  }, buttonRef);
 
   return (
-    <div className="text-center">
+    <Flex align="center" gap="middle" vertical>
       <div>Hello React !</div>
 
-      <button
-        className="m-2 rounded-md bg-blue-500 px-5 py-1 text-white transition hover:bg-blue-600"
+      <Button
+        type="primary"
         onClick={() => setCount(count + 1)}
+        ref={buttonRef}
       >
         {count}
-      </button>
-    </div>
+      </Button>
+
+      <div>bears</div>
+
+      <Button type="primary" onClick={() => increment()}>
+        {bears}
+      </Button>
+    </Flex>
   );
 }

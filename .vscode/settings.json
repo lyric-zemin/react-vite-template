@@ -1,10 +1,13 @@
 {
   "cSpell.words": [
+    "ahooks",
+    "antd",
     "lightningcss",
     "packagejson",
     "tailwindcss",
     "tilg",
     "unplugin",
-    "wireit"
+    "wireit",
+    "zustand"
   ]
 }
