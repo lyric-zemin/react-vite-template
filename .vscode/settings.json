@@ -4,6 +4,7 @@
     "packagejson",
     "tailwindcss",
     "tilg",
+    "unplugin",
     "wireit"
   ]
 }
