@@ -11,20 +11,6 @@
 - 😎 Reliable - Integrated eslint and commitlint.
 - 🤖 Intelligent - Integrated renovate to help you maintain the dependent version.
 
-## Preview
-
-[![qekup8.png](https://s1.ax1x.com/2022/03/20/qekup8.png)](https://imgtu.com/i/qekup8)
-
-## Getting Started
-
-```bash
-npx degit lzm0x219/template-vite-react myapp
-
-cd myapp
-
-git init
-```
-
 ### Prerequisites
 
 - `npm` and `pnpm` should be installed.

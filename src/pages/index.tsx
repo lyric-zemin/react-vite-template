@@ -1,5 +1,4 @@
 import { useCounterStore } from "@/stores/counter";
-import { useClickAway } from "ahooks";
 import { Button, Flex, notification } from "antd";
 
 export default function Index() {
@@ -17,7 +16,7 @@ export default function Index() {
 
   return (
     <Flex align="center" gap="middle" vertical>
-      <div>Hello React !</div>
+      <div className="text-lg">Hello React !</div>
 
       <Button
         type="primary"
@@ -27,7 +26,7 @@ export default function Index() {
         {count}
       </Button>
 
-      <div>bears</div>
+      <div className="text-lg">bears</div>
 
       <Button type="primary" onClick={() => increment()}>
         {bears}
