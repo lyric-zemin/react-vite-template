@@ -19,7 +19,7 @@
     "sourceMap": true,
     "types": ["vite/client", "@total-typescript/ts-reset"],
     "paths": {
-      "@/*": ["./src/*"]
+      "~/*": ["./src/*"]
     }
   },
   "include": ["src"],
