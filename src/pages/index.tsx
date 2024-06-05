@@ -16,7 +16,7 @@ export default function Index() {
 
   return (
     <Flex align="center" gap="middle" vertical>
-      <div className="text-amber text-lg">Hello React !</div>
+      <div className="text-lg text-amber">Hello React !</div>
 
       <Button
         type="primary"
@@ -26,7 +26,7 @@ export default function Index() {
         {count}
       </Button>
 
-      <div className="text-blue text-lg">bears</div>
+      <div className="text-lg text-blue">bears</div>
 
       <Button type="primary" onClick={() => increment()}>
         {bears}
