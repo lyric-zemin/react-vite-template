@@ -25,7 +25,13 @@ export default defineConfig({
     react(),
     tsPaths(),
     autoImport({
-      imports: ['react', { react: ['createContext'] }, 'ahooks'],
+      imports: [
+        'react',
+        'react-router-dom',
+        'ahooks',
+        // custom
+        { react: ['createContext'], tilg: [['default', 'useTilg']] },
+      ],
       dts: './src/types/auto-imports.d.ts',
     }),
   ],

@@ -1,4 +1,3 @@
-import { lazy, Suspense } from 'react'
 import { type RouteObject } from 'react-router-dom'
 
 const Index = lazy(() => import('~/pages/index'))
@@ -8,11 +7,7 @@ const Three = lazy(() => import('~/pages/three'))
 export const routes: Array<RouteObject> = [
   {
     index: true,
-    element: (
-      <Suspense>
-        <Index />
-      </Suspense>
-    ),
+    element: <Index />,
   },
   {
     path: '/three',
@@ -24,11 +19,7 @@ export const routes: Array<RouteObject> = [
   },
   {
     path: '*',
-    element: (
-      <Suspense>
-        <Notfound />
-      </Suspense>
-    ),
+    element: <Notfound />,
   },
 ]
 

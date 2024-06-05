@@ -1,16 +1,5 @@
 # React Template（⚡️）
 
-⚡️ A minimal React Vite starter template.
-
-## Feature
-
-- ⚡️ Fast - Build tools based on vite.
-- 👻 Small - Based on the smallest runnable build.
-- 💄 Prettier - Integrated Prettier to help you format the code.
-- ✅ Safety - Https is enabled by default.
-- 😎 Reliable - Integrated eslint and commitlint.
-- 🤖 Intelligent - Integrated renovate to help you maintain the dependent version.
-
 ### Prerequisites
 
 - `npm` and `pnpm` should be installed.
