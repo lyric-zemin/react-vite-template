@@ -3,6 +3,7 @@ import { type RouteObject } from 'react-router-dom'
 
 const Index = lazy(() => import('~/pages/index'))
 const Notfound = lazy(() => import('~/pages/404'))
+const Three = lazy(() => import('~/pages/three'))
 
 export const routes: Array<RouteObject> = [
   {
@@ -10,6 +11,14 @@ export const routes: Array<RouteObject> = [
     element: (
       <Suspense>
         <Index />
+      </Suspense>
+    ),
+  },
+  {
+    path: '/three',
+    element: (
+      <Suspense>
+        <Three />
       </Suspense>
     ),
   },
