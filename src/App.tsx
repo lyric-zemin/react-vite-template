@@ -1,14 +1,22 @@
-import { Fragment } from 'react'
+import { ConfigProvider, Spin } from 'antd'
+import { Suspense } from 'react'
 import { Outlet, ScrollRestoration } from 'react-router-dom'
-import useDebugRender from 'tilg'
 
 export default function App() {
-  useDebugRender()
+  useTilg()
 
   return (
-    <Fragment>
-      <Outlet />
+    <ConfigProvider>
+      <Suspense
+        fallback={
+          <div className="h-100vh flex-center text-5">
+            <Spin />
+          </div>
+        }
+      >
+        <Outlet />
+      </Suspense>
       <ScrollRestoration />
-    </Fragment>
+    </ConfigProvider>
   )
 }
