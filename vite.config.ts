@@ -1,8 +1,8 @@
-import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react-swc'
-import tsPaths from 'vite-tsconfig-paths'
-import autoImport from 'unplugin-auto-import/vite'
 import unoCSS from 'unocss/vite'
+import autoImport from 'unplugin-auto-import/vite'
+import { defineConfig } from 'vite'
+import tsPaths from 'vite-tsconfig-paths'
 
 export default defineConfig({
   build: {
