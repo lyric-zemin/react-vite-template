@@ -1,5 +1,6 @@
-import { useCounterStore } from '~/stores/counter'
 import { Button, Flex } from 'antd'
+
+import { useCounterStore } from '~/stores/counter'
 
 export default function Index() {
   const [count, setCount] = useState(0)

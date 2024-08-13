@@ -1,10 +1,12 @@
 import '@unocss/reset/tailwind-compat.css'
+import 'virtual:uno.css'
+
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import routes from '~/routes'
+
 import App from '~/App'
-import 'virtual:uno.css'
+import routes from '~/routes'
 
 const container = document.getElementById('root') as HTMLElement
 const root = createRoot(container)
