@@ -1,15 +1,19 @@
 import { create } from 'zustand'
+import { combine, devtools } from 'zustand/middleware'
 
-type State = {
+interface State {
   bears: number
 }
 
-type Actions = {
-  increment: () => void
-}
-
-export const useCounterStore = create<State & Actions>((set) => ({
-  bears: 0,
-
-  increment: () => set((state) => ({ bears: state.bears + 1 })),
-}))
+export const useCounterStore = create(
+  devtools(
+    combine(
+      {
+        bears: 0,
+      } as State,
+      (set, get) => ({
+        increment: () => set({ bears: get().bears + 1 }),
+      }),
+    ),
+  ),
+)
