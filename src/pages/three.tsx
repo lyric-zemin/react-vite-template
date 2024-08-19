@@ -1,18 +1,15 @@
-import { Canvas, MeshProps, useFrame } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
+import { Canvas, MeshProps, useFrame } from '@react-three/fiber'
 import * as THREE from 'three'
 
 function Box(props: MeshProps) {
   // This reference gives us direct access to the THREE.Mesh object
-  const meshRef = useRef(null)
+  const meshRef = useRef<THREE.Mesh>(null!)
   // Hold state for hovered and clicked events
   const [clicked, { toggle }] = useBoolean()
   const [hovered, { setTrue, setFalse }] = useBoolean()
   // Subscribe this component to the render-loop, rotate the mesh every frame
-  useFrame(
-    (state, delta) =>
-      ((meshRef.current as unknown as THREE.Mesh).rotation.x += delta),
-  )
+  useFrame((state, delta) => (meshRef.current.rotation.x += delta))
   // Return the view, these are regular Threejs elements expressed in JSX
   return (
     <mesh

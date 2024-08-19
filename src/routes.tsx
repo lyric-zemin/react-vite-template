@@ -11,11 +11,7 @@ export const routes: Array<RouteObject> = [
   },
   {
     path: '/three',
-    element: (
-      <Suspense>
-        <Three />
-      </Suspense>
-    ),
+    element: <Three />,
   },
   {
     path: '*',
