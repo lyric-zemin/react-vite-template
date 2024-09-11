@@ -1,3 +1,4 @@
+import tanStackRouter from '@tanstack/router-plugin/vite'
 import react from '@vitejs/plugin-react-swc'
 import unoCSS from 'unocss/vite'
 import autoImport from 'unplugin-auto-import/vite'
@@ -10,7 +11,7 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: {
-          'react-vendor': ['react', 'react-dom', 'react-router-dom'],
+          'react-vendor': ['react', 'react-dom'],
         },
       },
     },
@@ -22,12 +23,12 @@ export default defineConfig({
 
   plugins: [
     unoCSS(),
+    tanStackRouter(),
     react(),
     tsPaths(),
     autoImport({
       imports: [
         'react',
-        'react-router-dom',
         'ahooks',
         // custom
         { react: ['createContext'], tilg: [['default', 'useTilg']] },

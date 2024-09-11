@@ -1,8 +1,13 @@
+import { createLazyFileRoute } from '@tanstack/react-router'
 import { Button, Flex } from 'antd'
 
 import { useCounterStore } from '~/stores/counter'
 
-export default function Index() {
+export const Route = createLazyFileRoute('/')({
+  component: Index,
+})
+
+function Index() {
   const [count, setCount] = useState(0)
   const { bears, increment } = useCounterStore()
 

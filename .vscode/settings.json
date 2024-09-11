@@ -5,6 +5,7 @@
     "lightningcss",
     "packagejson",
     "tailwindcss",
+    "tanstack",
     "tilg",
     "unocss",
     "unplugin",
@@ -12,7 +13,7 @@
     "zustand"
   ],
 
-  "editor.formatOnSave": false,
+  "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit"
   }
