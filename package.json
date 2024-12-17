@@ -22,7 +22,6 @@
     "antd": "^5.17.2",
     "react": "18.3.1",
     "react-dom": "18.3.1",
-    "tilg": "0.1.1",
     "zustand": "^4.5.2"
   },
   "devDependencies": {
@@ -43,6 +42,7 @@
     "lightningcss": "1.24.1",
     "lint-staged": "15.2.2",
     "prettier": "3.2.5",
+    "tilg": "0.1.1",
     "typescript": "5.4.5",
     "unocss": "^0.60.4",
     "unplugin-auto-import": "^0.17.6",
