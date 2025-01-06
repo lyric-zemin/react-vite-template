@@ -1,29 +1,48 @@
+import { animated, useSpring } from '@react-spring/three'
+import { Helper, MeshDistortMaterial, OrbitControls } from '@react-three/drei'
+import { Canvas } from '@react-three/fiber'
 import { createLazyFileRoute } from '@tanstack/react-router'
-import { Button, Flex } from 'antd'
-
-import { useCounterStore } from '~/stores/counter'
+import { PointLightHelper } from 'three'
 
 export const Route = createLazyFileRoute('/')({
   component: Index,
 })
 
+const AnimatedMeshDistortMaterial = animated(MeshDistortMaterial)
+
 function Index() {
-  const [count, setCount] = useState(0)
-  const { bears, increment } = useCounterStore()
+  return (
+    <div className="size-screen">
+      <Canvas camera={{ position: [0, 0, 10] }}>
+        <ambientLight intensity={0.8} />
+        <pointLight intensity={2} position={[0, 6, 0]} decay={0.2}>
+          <Helper type={PointLightHelper} args={[1, '#ccc']} />
+        </pointLight>
+
+        <MyScene />
+        <OrbitControls />
+      </Canvas>
+    </div>
+  )
+}
+
+const MyScene = () => {
+  const [clicked, setClicked] = useState(false)
+
+  const springs = useSpring({
+    color: clicked ? '#569AFF' : '#ff6d6d',
+  })
+
+  const handleClick = () => setClicked((s) => !s)
 
   return (
-    <Flex align="center" gap="middle" vertical>
-      <div className="text-lg text-amber">Hello React !</div>
-
-      <Button type="primary" onClick={() => setCount(count + 1)}>
-        {count}
-      </Button>
-
-      <div className="text-lg text-blue">Hi bears</div>
-
-      <Button type="default" onClick={() => increment()}>
-        {bears}
-      </Button>
-    </Flex>
+    <mesh onClick={handleClick}>
+      <sphereGeometry args={[1.5, 64, 32]} />
+      <AnimatedMeshDistortMaterial
+        speed={5}
+        distort={0.5}
+        color={springs.color}
+      />
+    </mesh>
   )
 }

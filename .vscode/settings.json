@@ -2,6 +2,7 @@
   "cSpell.words": [
     "ahooks",
     "antd",
+    "drei",
     "lightningcss",
     "packagejson",
     "tailwindcss",
@@ -12,7 +13,6 @@
     "wireit",
     "zustand"
   ],
-
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit"
