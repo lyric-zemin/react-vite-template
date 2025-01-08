@@ -4,6 +4,7 @@
     "antfu.unocss",
     "dbaeumer.vscode-eslint",
     "EditorConfig.EditorConfig",
-    "AlDuncanson.react-hooks-snippets"
+    "AlDuncanson.react-hooks-snippets",
+    "slevesque.shader"
   ]
 }

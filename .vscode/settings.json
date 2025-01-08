@@ -3,6 +3,8 @@
     "ahooks",
     "antd",
     "drei",
+    "glsl",
+    "gltf",
     "lightningcss",
     "packagejson",
     "tailwindcss",
