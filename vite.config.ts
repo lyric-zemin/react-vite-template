@@ -13,10 +13,17 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: {
-          'react-vendor': ['react', 'react-dom'],
+          'react-vendor': [
+            'react',
+            'react-dom',
+            '@tanstack/react-router',
+            'zustand',
+          ],
+          'three-vendor': ['three', '@react-three/fiber'],
         },
       },
     },
+    chunkSizeWarningLimit: 1024,
   },
 
   optimizeDeps: {
@@ -36,12 +43,13 @@ export default defineConfig({
         { react: ['createContext'], tilg: [['default', 'useTilg']] },
       ],
       dts: './src/types/auto-imports.d.ts',
+      dirs: ['./src/hooks', './src/utils'],
     }),
     // https://github.com/nytimes/rd-bundler-3d-plugins
     // 模型文件支持
     gltf(),
     // https://github.com/UstymUkhman/vite-plugin-glsl
     // 着色器文件格式支持
-    glsl(),
+    glsl({ compress: true }),
   ],
 })

@@ -8,6 +8,7 @@ declare global {
   const createContext: (typeof import('react'))['createContext']
   const createRef: (typeof import('react'))['createRef']
   const forwardRef: (typeof import('react'))['forwardRef']
+  const isDev: (typeof import('../utils/env'))['isDev']
   const lazy: (typeof import('react'))['lazy']
   const memo: (typeof import('react'))['memo']
   const startTransition: (typeof import('react'))['startTransition']
