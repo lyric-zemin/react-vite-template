@@ -8,11 +8,11 @@ export default function App() {
   return (
     <ConfigProvider>
       <Suspense
-        fallback={
+        fallback={(
           <div className="h-100vh flex-center text-5">
             <Spin />
           </div>
-        }
+        )}
       >
         <Outlet />
       </Suspense>

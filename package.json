@@ -1,20 +1,13 @@
 {
   "name": "template",
-  "version": "0.0.0",
   "type": "module",
+  "version": "0.0.0",
   "scripts": {
     "dev": "vite --host --port 5173",
     "build": "vite build",
     "preview": "vite preview",
     "lint": "tsc",
     "prepare": "is-ci || husky install"
-  },
-  "lint-staged": {
-    "*.{ts,tsx,js,cjs}": [
-      "eslint --fix",
-      "prettier --write"
-    ],
-    "*.{md,html,css,json,yml}": "prettier --write"
   },
   "dependencies": {
     "ahooks": "^3.7.11",
@@ -26,6 +19,8 @@
     "zustand": "^4.5.2"
   },
   "devDependencies": {
+    "@antfu/eslint-config": "^4.2.0",
+    "@eslint-react/eslint-plugin": "^1.26.2",
     "@total-typescript/ts-reset": "0.5.1",
     "@types/node": "20.12.12",
     "@types/react": "18.3.2",
@@ -33,9 +28,10 @@
     "@unocss/eslint-config": "^0.60.4",
     "@unocss/reset": "^0.60.4",
     "@vitejs/plugin-react-swc": "3.6.0",
-    "eslint": "8.x",
-    "eslint-config-react-app": "^7.0.1",
-    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "eslint": "^9.1.0",
+    "eslint-plugin-format": "^0.1.1",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "eslint-plugin-react-refresh": "^0.4.19",
     "husky": "9.0.11",
     "is-ci": "3.0.1",
     "lightningcss": "1.24.1",
@@ -46,5 +42,9 @@
     "unplugin-auto-import": "^0.17.6",
     "vite": "5.2.11",
     "vite-tsconfig-paths": "4.3.2"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,cjs}": "eslint --fix",
+    "*.{md,html,css,json,yml}": "prettier --write"
   }
 }

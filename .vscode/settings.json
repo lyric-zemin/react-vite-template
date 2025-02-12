@@ -12,6 +12,8 @@
     "zustand"
   ],
 
+  "eslint.useFlatConfig": true,
+
   "editor.formatOnSave": false,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit"
