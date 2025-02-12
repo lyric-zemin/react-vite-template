@@ -26,14 +26,14 @@ function Index() {
   )
 }
 
-const MyScene = () => {
+function MyScene() {
   const [clicked, setClicked] = useState(false)
 
   const springs = useSpring({
     color: clicked ? '#569AFF' : '#ff6d6d',
   })
 
-  const handleClick = () => setClicked((s) => !s)
+  const handleClick = () => setClicked(s => !s)
 
   return (
     <mesh onClick={handleClick}>
