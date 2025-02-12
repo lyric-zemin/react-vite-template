@@ -1,30 +1,26 @@
-import react from '@vitejs/plugin-react-swc'
-import unoCSS from 'unocss/vite'
-import autoImport from 'unplugin-auto-import/vite'
+import React from '@vitejs/plugin-react-swc'
+import Unocss from 'unocss/vite'
+import AutoImport from 'unplugin-auto-import/vite'
 import { defineConfig } from 'vite'
-import tsPaths from 'vite-tsconfig-paths'
+import TsPaths from 'vite-tsconfig-paths'
 
 export default defineConfig({
   build: {
     cssMinify: 'lightningcss',
-    rollupOptions: {
-      output: {
-        manualChunks: {
-          'react-vendor': ['react', 'react-dom', 'react-router-dom'],
-        },
-      },
-    },
-  },
-
-  optimizeDeps: {
-    include: ['react/jsx-runtime'],
   },
 
   plugins: [
-    unoCSS(),
-    react(),
-    tsPaths(),
-    autoImport({
+    // https://github.com/vitejs/vite-plugin-react-swc
+    React(),
+
+    // See ./unocss.config.ts
+    Unocss(),
+
+    // https://github.com/aleclarson/vite-tsconfig-paths#readme
+    TsPaths(),
+
+    // https://github.com/unplugin/unplugin-auto-import#readme
+    AutoImport({
       imports: [
         'react',
         'react-router-dom',
