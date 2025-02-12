@@ -1,12 +1,12 @@
-import '@unocss/reset/tailwind-compat.css'
-import 'virtual:uno.css'
-
 import { createRouter, RouterProvider } from '@tanstack/react-router'
 import { Spin } from 'antd'
+
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-
 import { routeTree } from './routeTree.gen'
+
+import '@unocss/reset/tailwind-compat.css'
+import 'virtual:uno.css'
 
 const container = document.getElementById('root') as HTMLElement
 const root = createRoot(container)
