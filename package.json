@@ -8,7 +8,8 @@
     "preview": "vite preview",
     "lint": "tsc",
     "prepare": "is-ci || husky install",
-    "up": "npx taze minor -I -l"
+    "up": "npx taze minor -I -l",
+    "check:eslint": "npx @eslint/config-inspector"
   },
   "dependencies": {
     "@react-spring/three": "^9.7.5",
@@ -47,7 +48,6 @@
     "leva": "^0.9.36",
     "lightningcss": "1.29.1",
     "lint-staged": "15.4.3",
-    "prettier": "3.5.0",
     "tilg": "0.1.1",
     "typescript": "5.7.3",
     "unocss": "^65.4.3",
@@ -58,7 +58,6 @@
     "vite-tsconfig-paths": "5.1.4"
   },
   "lint-staged": {
-    "*.{ts,tsx,js,cjs}": "eslint --fix",
-    "*.{md,html,css,json,yml}": "prettier --write"
+    "*": "eslint --fix"
   }
 }
