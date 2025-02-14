@@ -7,43 +7,45 @@ import Glsl from 'vite-plugin-glsl'
 import Gltf from 'vite-plugin-gltf'
 import TsPaths from 'vite-tsconfig-paths'
 
-export default defineConfig({
-  build: {
-    cssMinify: 'lightningcss',
-    chunkSizeWarningLimit: 1024,
-  },
+export default defineConfig(({ command }) => {
+  return {
+    build: {
+      cssMinify: 'lightningcss',
+      chunkSizeWarningLimit: 1024,
+    },
 
-  plugins: [
-    // https://github.com/vitejs/vite-plugin-react-swc
-    React(),
+    plugins: [
+      // https://github.com/vitejs/vite-plugin-react-swc
+      React(),
 
-    // https://tanstack.com/router/latest/docs/framework/react/overview
-    TanStackRouter(),
+      // https://tanstack.com/router/latest/docs/framework/react/overview
+      TanStackRouter(),
 
-    // See ./unocss.config.ts
-    Unocss(),
+      // See ./unocss.config.ts
+      Unocss(),
 
-    // https://github.com/aleclarson/vite-tsconfig-paths#readme
-    TsPaths(),
+      // https://github.com/aleclarson/vite-tsconfig-paths#readme
+      TsPaths(),
 
-    // https://github.com/unplugin/unplugin-auto-import#readme
-    AutoImport({
-      imports: [
-        'react',
-        'ahooks',
-        // custom
-        { react: ['createContext'], tilg: [['default', 'useTilg']] },
-      ],
-      dts: './src/types/auto-imports.d.ts',
-      dirs: ['./src/hooks', './src/utils'],
-    }),
+      // https://github.com/unplugin/unplugin-auto-import#readme
+      AutoImport({
+        imports: [
+          'react',
+          'ahooks',
+          // custom
+          { react: ['createContext'], tilg: [['default', 'useTilg']] },
+        ],
+        dts: './src/types/auto-imports.d.ts',
+        dirs: ['./src/hooks', './src/utils'],
+      }),
 
-    // https://github.com/nytimes/rd-bundler-3d-plugins
-    // 模型文件支持
-    Gltf(),
+      // https://github.com/nytimes/rd-bundler-3d-plugins
+      // 模型文件支持
+      Gltf(),
 
-    // https://github.com/UstymUkhman/vite-plugin-glsl
-    // 着色器文件格式支持
-    Glsl({ compress: true }),
-  ],
+      // https://github.com/UstymUkhman/vite-plugin-glsl
+      // 着色器文件格式支持
+      Glsl({ compress: command === 'build' }),
+    ],
+  }
 })
